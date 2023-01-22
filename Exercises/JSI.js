@@ -20,11 +20,20 @@ Restricciones:
 🔴 0 <= strs[i].length <= 200
 🔴 strs[i] consta solo de letras minúsculas en inglés. */
 
+const { i } = require("mathjs");
+
 function longestCommonPrefix(strs){
     // Tu código aca:
-    
-
+    var first = strs[0];
+    var last = strs[strs.length - 1];
+    for (var i = 0; i < first.length; i++) {
+      if (first[i] !== last[i]) {
+        return first.substring(0, i);
+      }
+    }
+    return first;
 }
+
 
 
 
